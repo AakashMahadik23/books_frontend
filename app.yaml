@@ -1,0 +1,10 @@
+runtime: nodejs18
+handlers:
+  - url: /.*
+    static_files: my-app/build/index.html
+    upload: my-app/build/index.html
+
+  - url: /(.*)
+    static_files: my-app/build/\1
+    upload: my-app/build/(.*)
+
