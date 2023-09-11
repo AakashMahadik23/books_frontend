@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
-const baseurl = "https://mern-bookss-backend.onrender.com"; 
+
 
 function UpdateBookInfo(props) {
   const [book, setBook] = useState({
@@ -19,7 +19,7 @@ function UpdateBookInfo(props) {
 
   useEffect(() => {
     axios
-      .get(`${baseurl}/api/books/${id}`)
+      .get(`https://mern-bookss-backend.onrender.com/api/books/${id}`)
       .then((res) => {
         setBook({
           title: res.data.title,
