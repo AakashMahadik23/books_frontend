@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+const baseurl = "https://mern-bookss-backend.onrender.com"; 
 
 import { useNavigate } from 'react-router-dom';
 
@@ -24,7 +25,7 @@ const CreateBook = (props) => {
     e.preventDefault();
 
     axios
-      .post('http://localhost:3000/api/books/addBook', book)
+      .post('${baseurl}/api/books/addBook', book)
       .then((res) => {
         setBook({
           title: '',

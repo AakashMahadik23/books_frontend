@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
+const baseurl = "https://mern-bookss-backend.onrender.com"; 
 
 function ShowBookDetails(props) {
   const [book, setBook] = useState({});
@@ -11,7 +12,7 @@ function ShowBookDetails(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/books/${id}`)
+      .get(`${baseurl}/api/books/${id}`)
       .then((res) => {
         setBook(res.data);
       })
@@ -22,7 +23,7 @@ function ShowBookDetails(props) {
 
   const onDeleteClick = (id) => {
     axios
-      .delete(`http://localhost:3000/api/books/${id}`)
+      .delete(`${baseurl}/api/books/${id}`)
       .then((res) => {
         navigate('/');
       })
