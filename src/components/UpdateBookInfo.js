@@ -52,7 +52,7 @@ function UpdateBookInfo(props) {
     };
 
     axios
-      .put(`${baseurl}/api/books/${id}`, data)
+      .put(`https://mern-bookss-backend.onrender.com/api/books/${id}`, data)
       .then((res) => {
         navigate(`/show-book/${id}`);
       })
